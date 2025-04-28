@@ -1,0 +1,40 @@
+\documentclass[twoside=true,numbers=noenddot]{uoft-thesis}
+
+\include{frontmatter/header}
+\include{frontmatter/customization}
+
+\newcommand{\thesisTitle}{Thesis title}
+\newcommand{\candidateName}{First Name}
+\newcommand{\degreeName}{Doctor of Philosophy}
+\newcommand{\departmentName}{Department Name}
+\newcommand{\graduationYear}{Year}
+\newcommand{\universityName}{University of Toronto}
+
+% Bold the start of a paragraph and add a bit of space above and beside it. 
+\newcommand{\myparagraph}[1]{\vspace{0.015in}\noindent {\bf #1} \hspace{0.003in}}
+
+% Add the bibtex files. If you have existing bibliographies for separate papers and want to avoid having to merge them all, 
+% adding separate .bib files is helpful. 
+%\addbibresource{*.bib}
+
+\usepackage{blindtext}
+
+\begin{document}
+  \frontmatter{}
+  \input{frontmatter/title}
+
+  \input{frontmatter/abstract}
+  \input{frontmatter/acknowledgements}
+  \input{frontmatter/table-of-contents}
+
+  \mainmatter{}
+  \subfile{chapters/introduction}
+  \subfile{chapters/background}
+  \subfile{chapters/chapter1}
+  \subfile{chapters/chapter2}
+  \subfile{chapters/conclusion}
+  
+  \subfile{chapters/appendices}
+  
+  \printbibliography
+\end{document}

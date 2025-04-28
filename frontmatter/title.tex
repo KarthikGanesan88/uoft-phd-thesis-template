@@ -1,0 +1,62 @@
+\newgeometry{
+  % SGS Requirement: 2 inch spacing from top of page to title.
+  top = 2in,
+  % SGS Requirement: 1.25 inch spacing from bottom of page to copyright.
+  bottom = 1.25in,
+  % SGS Requirement: The left margin should be at least 1.25in.
+  left = 1.25in,
+  % SGS Requirement: The remaining margins should be at least 0.75in.
+  right = 1.75in,
+}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+
+  {
+    \huge
+    \noindent
+    \color{colourTitle}    
+    % SGS Requirement: thesis title should be capitalized
+    \textsc{\thesisTitle{}}\par
+  }
+
+  {
+    % SGS Requirement: 1.5 inch spacing between title and "by"
+    \vspace{1.5in}
+
+    \small
+    \noindent
+    by\par
+  }
+
+  {
+    % SGS Requirement: 1.5 inch spacing between "by" and student's name
+    \vspace{1.5in}
+
+    \large
+    \noindent
+    \candidateName{}\par
+  }
+  {
+    % SGS Requirement: 2 inch spacing between student's name and required text
+    \vspace{2in}
+
+    \small
+    \noindent
+    A thesis submitted in conformity with the requirements for the degree of \degreeName{},
+    Graduate Department of \departmentName{}, in the \universityName{}\par
+  }
+
+  {
+    % SGS Requirement: 1.25 inch spacing between required text and copyright
+    %\vspace{1.25in}
+    % Or put it right at the end of the page.
+    \vfill
+
+    \footnotesize
+    \noindent
+    \copyright Copyright \graduationYear{} by \candidateName{}
+  }
+\end{titlepage}
+
+\restoregeometry

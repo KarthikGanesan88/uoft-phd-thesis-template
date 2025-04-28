@@ -1,0 +1,93 @@
+
+\setlist[enumerate]{leftmargin=*, itemsep=1pt, topsep=1pt}
+\setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=1pt}
+\setcounter{secnumdepth}{3}
+
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+	\renewcommand{\contentsname}%
+	{Table of Contents}%
+}
+
+% Comments in algorithm
+\SetKwComment{Comment}{\bigskip $\triangleright$\ }{}
+
+%% New Environment for Code Snippets %%
+
+\makeatletter
+\newcounter{codesnippet}
+\newenvironment{codesnippet}[1][htb]
+{\renewcommand{\algorithmcfname}{Code Snippet}% Update algorithm name
+	\let\c@algocf\c@codesnippet% Update algorithm counter
+	\begin{algorithm}[#1]%
+	}{\end{algorithm}}
+\makeatother
+
+
+% Custom colors
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+		language=Python,
+		basicstyle=\small\ttfamily,
+		morekeywords={context},              % Add keywords here
+		keywordstyle=\color{deepblue},
+		emph={forward, backward},          % Custom highlighting
+		emphstyle=\color{deepred},    % Custom highlighting style
+		stringstyle=\color{deepgreen},
+		frame=tb,                         % Any extra options here
+		numbers=left,
+		showstringspaces=false,
+		breaklines=true,
+		postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+		escapeinside={(*}{*)}
+}}
+
+
+% Python environment
+\lstnewenvironment{pythonlst}[1][]
+{
+	\pythonstyle
+	\lstset{#1}
+}
+{}
+
+% Set extra spacing for tables globally.
+\def\arraystretch{1.2}
+
+
+% Re-define section and subsection headings
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Customize autoref text.
+\renewcommand{\figureautorefname}{Figure}
+\renewcommand{\tableautorefname}{Table}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\algorithmautorefname}{Algorithm}
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+
+\definecolor{colourTitle}{named}{RoyalBlue}
+\definecolor{colourMyGray}{rgb}{0.9, 0.9, 0.8}
+
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+
+% Special Symbols
+\newcommand{\circleone}{\ding{172}} 	% 1 in circle.
+\newcommand{\circletwo}{\ding{173}} 	% 2 in circle.
+\newcommand{\circlethree}{\ding{174}} 	% 3 in circle.
+\newcommand{\circlefour}{\ding{175}} 	% 4 in circle.
+\newcommand{\circlefive}{\ding{176}} 	% 5 in circle.
